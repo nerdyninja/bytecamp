@@ -4,9 +4,184 @@
 
 {% load staticfiles %}
 
+
 <div class="row">
-	<h5 align="center" class="red-text text-darken-1"><img src="{% static "assets/calendar.png" %}" width="36" align="center"> Home </h5>
-	
+	<br>
+	<br>
+	<div class="col s12 l12 m12 white darken-1 blue-text text-darken-4">
+		<div class="caption center-align">
+			<p id="message"></p>
+			<br>
+			<h5 align="center" id="timer">
+				<span id="days" class="timer-digit"></span>
+				<span id="hours" class="timer-digit"></span>
+				<span id="minutes" class="timer-digit"></span>
+				<span id="seconds" class="timer-digit"></span>
+			</h5>
+			<br>
+		</div>
+	</div>
 </div>
+
+<div class="row">
+	<br>
+	<h5 align="center" class="red-text text-darken-1"><img src="{% static "assets/calendar.png" %}" width="36" align="center"> Schedule </h5>
+	<br>
+	<br>
+	<p align="center"><img src="{% static "assets/arrows.png" %}" width="75%"></p>
+	<div class="container">
+    <div class="timeline">
+    	<br>
+    	<h5 align="center" id="digit-font" class="blue-text text-darken-4">DAY 1</h5>
+    	<br>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel blue">
+					<span class="white-text card-title">10 AM</span><br>
+					<span class="white-text">
+					REGISTRATION
+					& OTHER FORMALITIES
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge blue white-text"><i class="fa fa-pencil-square"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel red">
+					<span class="white-text card-title">11 AM</span><br>
+					<span class="white-text">
+					INTRODUCTORY SESSION
+					</span>
+		        </div>
+            </div>
+            <div class="card timeline-content">
+                <div class="card-panel red">
+					<span class="white-text card-title">11:40 AM</span><br>
+					<span class="white-text">
+					QA SESSION
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge red white-text"><i class="fa fa-info-circle"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel green">
+					<span class="white-text card-title">12:30 PM</span><br>
+					<span class="white-text">
+					HACKATHON STARTS!!!
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge green white-text"><i class="fa fa-flag"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel purple">
+					<span class="white-text card-title">14:00 PM - 15:00 PM</span><br>
+					<span class="white-text">
+					LUNCH
+					</span>
+		        </div>
+            </div>
+            <div class="card timeline-content">
+                <div class="card-panel purple darken-1">
+					<span class="white-text card-title">20:00 PM - 22:00 PM</span><br>
+					<span class="white-text">
+					DINNER
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge purple white-text"><i class="fa fa-cutlery"></i></div>
+        </div>
+        <br>
+        <h5 align="center" id="digit-font" class="blue-text text-darken-4">DAY 2</h5>
+        <br>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel purple darken-2">
+					<span class="white-text card-title">8:00 AM - 9:00 AM</span><br>
+					<span class="white-text">
+					BREAKFAST
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge purple white-text"><i class="fa fa-cutlery"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel green darken-1">
+					<span class="white-text card-title">13:30 PM</span><br>
+					<span class="white-text">
+					HACKATHON ENDS!!!
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge green darken-1 white-text"><i class="fa fa-flag"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel purple darken-3">
+					<span class="white-text card-title">14:00 AM - 15:30 PM</span><br>
+					<span class="white-text">
+					LUNCH
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge purple white-text"><i class="fa fa-cutlery"></i></div>
+        </div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-panel orange darken-3">
+					<span class="white-text card-title">16:00 AM - 18:30 PM</span><br>
+					<span class="white-text">
+					PRESENTATION AND PRIZE DISTRIBUTION
+					</span>
+		        </div>
+            </div>
+            <div class="timeline-badge orange white-text"><i class="fa fa-bookmark"></i></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+	var countDownDate = new Date("Feb 26, 2017 13:30:00").getTime();
+	var x = setInterval(function() {
+		var now = new Date().getTime();
+		var difference = countDownDate - now;
+		// Calcs
+		var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+		if(days < 1)
+			document.getElementById('message').innerHTML = "Hackathon Ends In";
+		else document.getElementById('message').innerHTML = "Hackathon Starts In";
+		if(days < 10){
+			days = '0'+days;
+		}
+		if(hours < 10){
+			hours = '0'+hours;
+		}
+		if(minutes < 10){
+			minutes = '0'+minutes;
+		}
+		if(hours < 10){
+			hours = '0'+hours;
+		}
+		// Display
+		document.getElementById("days").innerHTML = days + ' :';
+		document.getElementById("hours").innerHTML = hours + ' :';
+		document.getElementById("minutes").innerHTML = minutes + ' :';
+		document.getElementById("seconds").innerHTML = seconds;
+		if (difference < 0) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "EXPIRED";
+		}
+		
+	}, 1000);
+</script>
 
 {% endblock content %}
