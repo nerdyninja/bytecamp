@@ -1,0 +1,29 @@
+{% extends 'layout/master.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<div class="row">
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<img src="{% static "assets/fbdevc.jpg" %}">
+				<div class="white-text caption center-align">
+				</div>
+			</li>
+			<li>
+				<img src="{% static "assets/ahy.png" %}">
+				<div class="white-text caption left-align">
+				</div>
+			</li>
+			<li>
+				<img src="{% static "assets/hackerearth.jpg" %}">
+				<div class="white-text caption right-align">
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+{% endblock content %}
