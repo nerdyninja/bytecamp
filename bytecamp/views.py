@@ -9,10 +9,6 @@ def index(request, *args, **kwargs):
 def about(request, *args, **kwargs):
 	return render(request, "pages/about.html", {"title": "About - ByteCamp '17"})
 
-# Help Page
-def help(request, *args, **kwargs):
-	return render(request, "pages/help.html", {"title": "Help - ByteCamp '17"})
-
 # Home Page
 def home(request, *args, **kwargs):
 	return render(request, "pages/home.html", {"title": "Home - ByteCamp '17"})
