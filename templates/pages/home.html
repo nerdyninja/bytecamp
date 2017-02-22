@@ -171,6 +171,9 @@
 		if(hours < 10){
 			hours = '0'+hours;
 		}
+		if(seconds < 10){
+			seconds = '0'+seconds;
+		}
 		// Display
 		document.getElementById("days").innerHTML = days + ' :';
 		document.getElementById("hours").innerHTML = hours + ' :';
