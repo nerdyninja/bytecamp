@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from teams.models import Team
+
 # Index Page
 def index(request, *args, **kwargs):
 	return render(request, "pages/index.html", {"title": "ByteCamp '17"})
@@ -15,4 +17,9 @@ def home(request, *args, **kwargs):
 
 # Teams Page
 def teams(request, *args, **kwargs):
-	return render(request, "pages/teams.html", {"title": "Teams - ByteCamp '17"})
+	query = Team.objects.order_by('name')
+	context = {
+		"teams_list": query,
+		"title": "Teams - ByteCamp '17"
+	}
+	return render(request, "pages/teams.html", context)
