@@ -23,3 +23,11 @@ def teams(request, *args, **kwargs):
 		"title": "Teams - ByteCamp '17"
 	}
 	return render(request, "pages/teams.html", context)
+
+# Countdown Page
+def countdown(request, *args, **kwargs):
+	return render(request, "pages/countdown.html", {"title": "Countdown - ByteCamp '17"})
+
+# Timer Page
+def timer(request, *args, **kwargs):
+	return render(request, "pages/timer.html", {"title": "Tick Tick - ByteCamp '17"})

@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^about', views.about, name='about'),
     url(r'^home', views.home, name='home'),
     url(r'^teams', views.teams, name='teams'),
+    url(r'^countdown', views.countdown, name='countdown'),
+    url(r'^timer', views.timer, name='timer')
 ]
 
 if not settings.DEBUG:
