@@ -1,0 +1,108 @@
+{% extends 'layout/master.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<div class="row">
+	<img src="{% static "assets/bycover.png" %}" width="100%">
+</div>
+
+<h4 class="thick" align="center">Our Sponsors</h4>
+<br>
+<br>
+<div class="row">
+    <div class="col s12 m4 offset-m2">
+	    <h5 align="center">Title Sponsor</h5>
+	    <p align="center">
+	    	<a href="http://www.stellapps.com/">
+	        <img class="materialboxed" width="40%" src="{% static "assets/sponsor/stellapps.jpg" %}">
+	    	</a>
+	    </p>
+    </div>
+    <div class="col s12 m4">
+	    <h5 align="center">Co-Sponsor</h5>
+	    <p align="center">
+	    	<br>
+	    	<br>
+		    <a href="https://www.joisterconnect.com/">
+		        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/joister.png" %}">
+		    </a>
+		</p>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col s12 m4">
+    <h5 align="center">Platform Partner</h5>
+    <p align="center">
+    	<br>
+    	<br>
+	    <a href="https://www.hackerearth.com/">
+	        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/Hackerearth.png" %}">
+	    </a>
+	</p>
+    </div>
+    <div class="col s12 m4">
+    <h5 align="center">Student Partner</h5>
+    <p align="center">
+    	<br>
+    	<br>
+	    <a href="https://frapp.in/">
+	        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/frapp.png" %}">
+	    </a>
+	</p>
+    </div>
+    <div class="col s12 m4">
+    <h5 align="center">Online Media Partner</h5>
+    <p align="center">
+    	<br>
+    	<br>
+	    <a href="http://festpav.com/">
+	        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/festPav.png" %}">
+	    </a>
+	</p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col s12 m4 offset-m2">
+    <h5 align="center">Deployment Partner</h5>
+    <p align="center">
+    	<br>
+    	<br>
+	    <a href="https://hasura.io/">
+	        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/hasura.png" %}">
+	    </a>
+	</p>
+    </div>
+    <div class="col s12 m4">
+    <h5 align="center">Hardware Partner</h5>
+    <p align="center">
+    	<br>
+	    <a href="http://maverickden.com/">
+	        <img class="materialboxed" width="50%" src="{% static "assets/sponsor/md_logo.jpg" %}">
+	    </a>
+	</p>
+    </div>
+</div>
+<div class="row">
+    <h5 align="center">Partners</h5>
+    <div class="col s12 m4 offset-m2">
+   	<p align="center">
+	    <a href="https://www.riidl.org/ ">
+	        <img class="materialboxed" width="60%" src="{% static "assets/sponsor/riidl.png" %}">
+	    </a>
+	</p>
+    </div>
+    <div class="col s12 m4">
+    <p align="center">
+	    <a href="https://developers.facebook.com/developercircles/">
+	        <img class="materialboxed" width="60%" src="{% static "assets/sponsor/fbdevc.png" %}">
+	    </a>
+	</p>
+    </div>
+</div>
+<br>
+{% endblock content %}

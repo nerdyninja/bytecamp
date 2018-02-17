@@ -1,0 +1,68 @@
+{% extends 'layout/master.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+<div class="row">
+	<br>
+	<br>
+	<div class="col s12 l12 m12 white darken-1 blue-text text-darken-4">
+		<div class="caption center-align">
+			<p id="message" style="margin-top: 10%;"></p>
+			<br>
+			<br>
+			<h5 align="center" id="timer">
+				<span id="days" class="timer-digit" style="font-size: 240px;"></span>
+				<span id="hours" class="timer-digit" style="font-size: 240px;"></span>
+				<span id="minutes" class="timer-digit" style="font-size: 240px;"></span>
+				<span id="seconds" class="timer-digit" style="font-size: 240px;"></span>
+			</h5>
+			<br>
+			<br>
+			<h5 style="margin-bottom: 10%;">ByteCamp 2017</h5>
+			<br>
+		</div>
+	</div>
+</div>
+
+<script>
+	var countDownDate = new Date(new Date().getTime() + 60 * 60 * 24 * 1000);
+	var x = setInterval(function() {
+		var now = new Date().getTime() - 2000;
+		var difference = countDownDate - now;
+		// Calcs
+		var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+		if(days < 1){
+			document.getElementById('message').innerHTML = "Hackathon Ends In";
+		}
+		if(days < 10){
+			days = '0'+days;
+		}
+		if(hours < 10){
+			hours = '0'+hours;
+		}
+		if(minutes < 10){
+			minutes = '0'+minutes;
+		}
+		if(seconds < 10){
+			seconds = '0'+seconds;
+		}
+		// Display
+		document.getElementById("days").innerHTML = days + ' :';
+		document.getElementById("hours").innerHTML = hours + ' :';
+		document.getElementById("minutes").innerHTML = minutes + ' :';
+		document.getElementById("seconds").innerHTML = seconds;
+		if (difference < 0) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "EXPIRED";
+		}
+		
+	}, 1000);
+</script>
+
+{% endblock content %}

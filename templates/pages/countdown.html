@@ -1,0 +1,51 @@
+{% extends 'layout/master.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+<div class="row">
+	<br>
+	<br>
+	<div class="col s12 l12 m12 white darken-1 blue-text text-darken-4">
+		<div class="caption center-align">
+			<h2 class="red-text">ByteCamp '18</h2>
+			<br>
+			<br>
+			<div id="msg">
+				<h5 align="center" id="timer" style="margin-top: 150px;margin-bottom: 150px;">
+					<span id="time" class="timer-digit" style="font-size: 320px;border: 1px solid #3875ed;border-radius: 50%;padding: 2% 7%;display: none;">10</span>
+				</h5>
+			</div>
+			<br>
+		</div>
+	</div>
+	<p align="center"><button class="btn btn-sm green" id="startTimer" onclick="startCountDown()">START THE FUN! <i class="fa fa-check-circle"></i></button></p>
+</div>
+
+
+
+<script>
+	function startCountDown(){
+		elem = document.getElementById("time");
+		elem.style.display = "";
+		var counter = 10;
+		setInterval(function() {
+			counter--;
+			if (counter > 0) {
+				
+				elem.innerHTML = counter;
+			}
+			if (counter === 0) {
+				document.getElementById("timer").innerHTML = "HACKING BEGINS NOW!";
+				document.getElementById("timer").style.fontSize = "60px";
+				setTimeout(function() {
+					window.location.href = "/home";
+				}, 1000);
+			}
+		}, 1000);
+	}
+</script>
+
+{% endblock content %}
